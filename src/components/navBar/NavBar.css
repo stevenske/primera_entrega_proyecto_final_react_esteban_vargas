@@ -1,0 +1,26 @@
+.text-ice {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.zoom {
+    transition: 300ms;
+}
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.bg-ice{
+    background-color:#ffb124 ;
+}
+
+.navDeco a{
+    transition: 300ms;
+}
+
+.navDeco a:hover{
+    color: #000;
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem;
+}

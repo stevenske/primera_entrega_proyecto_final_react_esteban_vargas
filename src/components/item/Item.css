@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    padding: 1rem 1rem;
+    border: 1px solid #000;
+    justify-content: center;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.card_size img{
+    height: 300px;
+    object-fit: contain;
+}
+.card-body{
+    flex-direction: column;
+}
+.btn{
+    background-color: #ffbc42;
+}
+.btn:hover{
+    background-color: orange !important; 
+}
+.zoom {
+    transition: 300ms;
+}
+.zoom:hover {
+    transform: scale(1.1);
+    border-color: #000;
+}
+

@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+    padding: 1rem 1rem;
+    border: 1px solid #000;
+    justify-content: center;
+    border-radius: 5px;
+    width: 300px;
+    height: 60vh;
+}
+
+.card_size img{
+    height: 300px;
+    object-fit: contain;
+}
+.card-body{
+    flex-direction: column;
+}
+.btn{
+    background-color: #ffbc42;
+}
+.btn:hover{
+    background-color: orange !important; 
+}
+.zoom {
+    transition: 300ms;
+}
+.zoom:hover {
+    transform: scale(1.1);
+    border-color: #000;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: black solid 1px;
+    border-radius: 5px;
+    height: 60vh;
+    padding: 1rem 2rem 1rem 2rem;
+    gap: 2rem;
+    width: 350px;
+    flex-wrap: wrap;
+}
