@@ -1,6 +1,6 @@
 import GetFetch from '../data/Data'
 import { useEffect, useState } from 'react'
-import ItemDetail from '../itemListDetail/ItemListDetail'
+import ItemDetail from '../itemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState([])

@@ -7,7 +7,7 @@ const Item = ({ data }) => {
     const restar = () => items > 0 ? setItems(items - 1) : alert`por favor introduce la cantidad del producto que quiera agregar al carrito, muchas gracias!`
     return (
         <>
-            <div id={`phone${data.id}`} className="col-md-2 card card_size d-flex">
+            <div id={`phone${data.id}`} className="card card_size d-flex">
                 <img src={`${data.img}`} className="card-img-top zoom" alt={data.alt}/>
                     <div className="d-flex justify-content-center card-body">
                         <h5 className="card-title text-center">{data.brand} {data.model}</h5>
