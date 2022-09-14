@@ -7,8 +7,8 @@ function App() {
   <>
     <div className="App">
       <NavBar/>
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer/>
+      <ItemListContainer/>
+      {/* <ItemDetailContainer/> */}
     </div>
     </>
   );
