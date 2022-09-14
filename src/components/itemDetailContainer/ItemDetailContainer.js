@@ -1,6 +1,6 @@
 import GetFetch from '../data/Data'
 import { useEffect, useState } from 'react'
-import ItemDetail from '../itemDetail/ItemDetail'
+import ItemListDetail from '../itemListDetail/ItemListDetail'
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState([])
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         <div id='ItemDetail-container' className='row itemContainer gap-3'>
             {
                 loading ? <span>Cargando...</span> :
-                    <ItemDetail products={data} />
+                    <ItemListDetail products={data} />
             }
         </div>
     </>
