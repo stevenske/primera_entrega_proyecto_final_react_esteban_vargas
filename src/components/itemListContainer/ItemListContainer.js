@@ -1,28 +1,25 @@
 
 import './ItemListContainer.css'
-import GetFetch from '../data/Data'
 import { useEffect, useState } from 'react'
 import ItemList from '../itemList/ItemList'
 
 const ItemListContainer = () => {
-  const[data, setData] = useState([])
-  const [loading,setLoading]=useState(true)
+  const [list, setList] = useState([])
+  const getProducts = async () =>{
+      fetch('https://fakestoreapi.com/products/',{
+          method: 'GET'
+      })
+      .then((response)=>response.json())
+      .then((data)=> setList(data))
+      .finally(console.log(list))
+  }
 
   useEffect(()=>{
-    GetFetch
-    .then((resp)=>setData(resp))
-    .catch((error=>console.log(error)))
-    .finally(()=>setLoading(false))
+    getProducts()
   },[])
-
-
-
   return (<>
     <div id='ItemList-container' className='row itemContainer gap-3'>
-    {
-      loading?<span>Cargando...</span>:
-      <ItemList products={data}/>
-    }
+      <ItemList products={list}/>
     </div>
     </>
 )}
