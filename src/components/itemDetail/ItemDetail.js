@@ -12,9 +12,9 @@ const ItemDetail = ({ product }) => {
                         <h5 className="card-title text-center">{product.title}</h5>
                         <h5 className="card-title text-center">Stock: {product.rating.count}</h5>
                         <div className='d-flex justify-content-center'>
-                            <button className='btn counterBtn' onClick={restar}>-</button>
+                            <button className='btn' onClick={restar}>-</button>
                             <p className='my-auto mx-2'>{items}</p>
-                            <button className='btn counterBtn' onClick={sumar}>+</button>
+                            <button className='btn' onClick={sumar}>+</button>
                         </div>
                         <h6 className="card-title text-center">${product.price}</h6>
                         <button className='btn'>Add to Cart</button>
