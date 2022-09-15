@@ -1,27 +1,27 @@
-// import { useEffect, useState } from 'react'
-// import ItemDetail from '../itemDetail/ItemDetail'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemDetail from '../itemDetail/ItemDetail'
 
-// const ItemDetailContainer = () => {
-//     const [data, setData] = useState([])
-//     const [loading, setLoading] = useState(true)
+const ItemDetailContainer = () => {
+    const {id} = useParams()
+    const [product,setProduct]= useState()
 
-//     useEffect(() => {
-//         GetFetch
-//             .then((resp) => setData(resp.filter(el => el.id == 1)))
-//             .catch((error => console.log(error)))
-//             .finally(() => setLoading(false))
-//     }, [])
+    const getProduct = async () => {
+        await fetch(`https://fakestoreapi.com/products/${id}`)
+            .then((res) => res.json())
+            .then((producto) =>{
+            console.log(producto)
+            setProduct(producto)
+        })
+    }
+    useEffect(() => {
+        getProduct()
+    }, [])
+    return (
+        <div id='ItemDetail-container' className='row itemContainer gap-3'>     
+            {product && <ItemDetail product={product} />}
+        </div>
+    )
+}
 
-//     return (
-//     <>
-//         <div id='ItemDetail-container' className='row itemContainer gap-3'>
-//             {
-//                 loading ? <span>Cargando...</span> :
-//                     <ItemDetail products={data} />
-//             }
-//         </div>
-//     </>
-//     )
-// }
-
-// export default ItemDetailContainer
+export default ItemDetailContainer

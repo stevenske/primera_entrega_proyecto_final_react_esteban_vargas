@@ -1,6 +1,6 @@
 import Cart from '../cart/Cart'
 import './NavBar.css'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const NavBar = () =>{
     const cartImg = './img/shopping_cart_logo.png'
@@ -16,13 +16,32 @@ const NavBar = () =>{
                 <div className="collapse navbar-collapse navDeco gap-1 lh-3 border-2" id="navbarNav">
                     <ul className="navbar-nav container-fluid d-flex justify-content-evenly">
                         <li className="nav-item zoom">
-                            <Link className="text-ice" to={'/about-us'}>ABOUT US</Link>
+                            <NavLink style={({isActive})=>
+                                isActive
+                                ? {fontWeight:'bold', color:'white'}
+                                :{}                        
+                            } className='text-nav' to={'/category/electronics'}>ELECTRONIC</NavLink>
                         </li>
                         <li className="nav-item zoom">
-                            <Link className='text-ice' to={'/detail'}>DETAIL</Link>
+                            <NavLink style={({isActive})=>
+                                isActive
+                                ? {fontWeight:'bold', color:'white'}
+                                :{}                        
+                            } className='text-nav' to={"/category/men's clothing"}>MEN'S CLOTHING</NavLink>
                         </li>
                         <li className="nav-item zoom">
-                            <Link className="text-ice" to={'/contact'}>CONTACT</Link>
+                            <NavLink style={({isActive})=>
+                                isActive
+                                ? {fontWeight:'bold', color:'white'}
+                                :{}
+                            }className="text-nav" to={'/contact'}>CONTACT</NavLink>
+                        </li>
+                        <li className="nav-item zoom">
+                            <NavLink style={({isActive})=>
+                                isActive
+                                ? {fontWeight:'bold', color:'white'}
+                                :{}
+                            } className="text-nav" to={'/about-us'}>ABOUT US</NavLink>
                         </li>
                     </ul>
                     <Cart img={cartImg}/>
