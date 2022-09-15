@@ -1,5 +1,4 @@
 import './Cart.css'
-import NavBar from '../navBar/NavBar'
 
 const Cart = ({ img }) => {
     return (
