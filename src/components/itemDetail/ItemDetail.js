@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ItemCount from '../itemCount/ItemCount'
 import './ItemDetail.css'
 const ItemDetail = ({ product }) => {
     const [items, setItems] = useState(0)
@@ -11,11 +12,7 @@ const ItemDetail = ({ product }) => {
                     <div className="d-flex justify-content-center card-body">
                         <h5 className="card-title text-center">{product.title}</h5>
                         <h5 className="card-title text-center">Stock: {product.rating.count}</h5>
-                        <div className='d-flex justify-content-center'>
-                            <button className='btn' onClick={restar}>-</button>
-                            <p className='my-auto mx-2'>{items}</p>
-                            <button className='btn' onClick={sumar}>+</button>
-                        </div>
+                        <ItemCount product={product}/>
                         <h6 className="card-title text-center">${product.price}</h6>
                         <button className='btn'>Add to Cart</button>
                     </div>

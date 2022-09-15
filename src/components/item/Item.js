@@ -9,13 +9,12 @@ const Item = ({ data }) => {
                     <div className="d-flex justify-content-center card-body">
                         <h5 className="card-title text-center">{data.title}</h5>                        
                     <h5 className="rate card-title text-center" style={{color: data.rating.rate < 3? 'red':'green'}}><span style={{color:'black'}}>Ranting:</span> {data.rating.rate}</h5>
-                    <h5 className="rate card-title text-center">STOCK: {data.rating.count}</h5>
-                        <h6 className="card-title text-center">${data.price}</h6>
+                    <h5 className="rate card-title border border-dark rounded-3 text-center">STOCK: {data.rating.count}</h5>
+                        <h4 className="card-title text-center pt-2">${data.price}</h4>
                     </div>
             </div>
         </>
     )
 }
-
 
 export default Item
