@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
         await fetch(`https://fakestoreapi.com/products/${id}`)
             .then((res) => res.json())
             .then((producto) =>{
-            console.log(producto)
+            // console.log(producto)
             setProduct(producto)
         })
     }
