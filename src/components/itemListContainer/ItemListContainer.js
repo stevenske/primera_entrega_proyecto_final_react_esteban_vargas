@@ -21,7 +21,7 @@ const ItemListContainer = () => {
       })
       .then((response)=>response.json())
       .then((data)=> setList(data))
-      .finally(console.log(list))
+      // .finally(console.log(list))
   }
 
   useEffect(()=>{

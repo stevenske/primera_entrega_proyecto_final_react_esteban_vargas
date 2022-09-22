@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from '../itemCount/ItemCount'
 import './ItemDetail.css'
+
+import { CartContext } from '../../context/CartContext'
+
 const ItemDetail = ({ product }) => {
-    const [count, setCount] = useState(0)
-    const handleClick = () => {
-        console.log(count);
+    const {addToCart} = useContext(CartContext)
+    const [count, setCount] = useState(1)
+
+    const onAdd = (product, quantity) => {
+        addToCart(product, count)
     }
     return (
         <>
@@ -16,7 +21,7 @@ const ItemDetail = ({ product }) => {
                         <h5 className="card-title text-center">Stock: {product.rating.count}</h5>
                         <ItemCount product={product} setCount ={setCount} count={count}/>
                         <h6 className="card-title text-center">${product.price}</h6>
-                        <Link to='/cart' onClick={handleClick} className='btn'>Add to Cart</Link>
+                        <Link  onClick={() => onAdd(product)} className='btn'>Add to Cart</Link>
                     </div>
             </div>
             <ul className='desc col-6'>
