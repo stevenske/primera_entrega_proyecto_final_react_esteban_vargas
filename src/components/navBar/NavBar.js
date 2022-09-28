@@ -1,4 +1,4 @@
-import Cart from '../cart/Cart'
+import CartWidget from '../cartWidget/CartWidget'
 import './NavBar.css'
 import { NavLink, Link } from 'react-router-dom'
 
@@ -44,7 +44,7 @@ const NavBar = () =>{
                             } className="text-nav" to={'/about-us'}>ABOUT US</NavLink>
                         </li>
                     </ul>
-                    <Cart img={cartImg}/>
+                    <ul className='zoom'><Link className='link' to="/cart"><CartWidget img={cartImg}/></Link></ul>
                 </div>
             </div>
         </nav>
