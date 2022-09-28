@@ -20,28 +20,28 @@ const NavBar = () =>{
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}                        
-                            } className='text-nav' to={'/category/electronics'}>ELECTRONIC</NavLink>
+                            } className='text-nav fs-4' to={'/category/electronics'}>ELECTRONIC</NavLink>
                         </li>
                         <li className="nav-item zoom">
                             <NavLink style={({isActive})=>
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}                        
-                            } className='text-nav' to={"/category/men's clothing"}>MEN'S CLOTHING</NavLink>
+                            } className='text-nav fs-4' to={"/category/men's clothing"}>MEN'S CLOTHING</NavLink>
                         </li>
                         <li className="nav-item zoom">
                             <NavLink style={({isActive})=>
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}
-                            }className="text-nav" to={'/contact'}>CONTACT</NavLink>
+                            }className="text-nav fs-4" to={'/contact'}>CONTACT</NavLink>
                         </li>
                         <li className="nav-item zoom">
                             <NavLink style={({isActive})=>
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}
-                            } className="text-nav" to={'/about-us'}>ABOUT US</NavLink>
+                            } className="text-nav fs-4" to={'/about-us'}>ABOUT US</NavLink>
                         </li>
                     </ul>
                     <ul className='zoom'><Link className='link' to="/cart"><CartWidget img={cartImg}/></Link></ul>

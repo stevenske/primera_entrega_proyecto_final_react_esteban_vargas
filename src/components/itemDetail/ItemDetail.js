@@ -16,7 +16,7 @@ const ItemDetail = ({ product }) => {
     }
     return (
         <>
-            <div id={`${product.id}`} className="col-6 card card_size d-flex">
+            <div id={`${product.id}`} className="col-6 card cardDetail d-flex">
                 <img src={`${product.image}`} className="card-img-top zoom" alt={product.title}/>
                     <div className="d-flex justify-content-center card-body">
                         <h5 className="card-title text-center">{product.title}</h5>
