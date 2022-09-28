@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 const Cart = () => {
     const { cart, addToCart,removeProduct } = useContext(CartContext)
-    const total = cart.reduce((acc,prod)=>acc + prod.price * prod.quantity,0)
+    const totalProduct = cart.reduce((acc,prod)=>acc + prod.price * prod.quantity,0)
     return (
         <div className='row itemContainer gap-3'>
             <h1>Cart</h1>
@@ -24,7 +24,7 @@ const Cart = () => {
                     <div className="d-flex justify-content-center card-body">
                         <h5 className="card-title text-center">{product.title}</h5>
                         <h5 className="card-title text-center">Quantity: {product.quantity}</h5>
-                        <h6 className="card-title text-center">${total}</h6>
+                        <h6 className="card-title text-center">${totalProduct}</h6>
                         <button className='btn' onClick={() => removeProduct(product.id)}>remove</button>
                     </div>
             </div>

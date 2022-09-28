@@ -7,9 +7,11 @@ import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({ product }) => {
     const {addToCart} = useContext(CartContext)
+    const[value,setValue] =useState(true)
     const [count, setCount] = useState(1)
-
     const onAdd = (product) => {
+        setValue(!value)
+        console.log(value);
         addToCart(product, count)
     }
     return (
@@ -21,7 +23,7 @@ const ItemDetail = ({ product }) => {
                         <h5 className="card-title text-center">Stock: {product.rating.count}</h5>
                         <ItemCount product={product} setCount ={setCount} count={count}/>
                         <h6 className="card-title text-center">${product.price}</h6>
-                        <Link  onClick={() => onAdd(product)} className='btn'>Add to Cart</Link>
+                        { value == true ? <Link  onClick={() => onAdd(product)} className='btn'>Add to Cart</Link>: <button className='btn' to={'/'}>Finish Shopping</button>/*<Link className='btn' to={'/'}>Go to Home</Link>} */}
                     </div>
             </div>
             <ul className='desc col-6'>
