@@ -9,3 +9,12 @@
 .backToHome:hover {
     color: rgb(255, 177, 36);
 }
+.bgMix{
+    background-color: rgb(255, 177, 36);
+}
+.total{
+    margin: 0;
+}
+.borderMix{
+    border-color: rgb(255, 177, 36) !important;
+}
