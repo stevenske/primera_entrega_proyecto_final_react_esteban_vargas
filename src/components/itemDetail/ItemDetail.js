@@ -19,8 +19,9 @@ const ItemDetail = ({ product }) => {
             <div id={`${product.id}`} className="col-6 card cardDetail d-flex">
                 <img src={`${product.image}`} className="card-img-top zoom" alt={product.title}/>
                     <div className="d-flex justify-content-center card-body">
-                        <h5 className="card-title text-center">{product.title}</h5>
-                        <h5 className="card-title text-center">Stock: {product.rating.count}</h5>
+                        <h5 className="card-title text-center">{product.brand}</h5>
+                        <h5 className="card-title text-center">{product.model}</h5>
+                        <h5 className="card-title text-center">Stock: {product.stock}</h5>
                         <ItemCount product={product} setCount ={setCount} count={count}/>
                         <h6 className="card-title text-center">${product.price}</h6>
                         { value == true ? <Link  onClick={() => onAdd(product)} className='btn'>Add to Cart</Link>: <button className='btn' to={'/'}>Finish Shopping</button>/*<Link className='btn' to={'/'}>Go to Home</Link>} */}

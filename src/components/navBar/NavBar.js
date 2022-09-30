@@ -20,14 +20,14 @@ const NavBar = () =>{
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}                        
-                            } className='text-nav fs-4' to={'/category/electronics'}>ELECTRONIC</NavLink>
+                            } className='text-nav fs-4' to={'/category/smartphone'}>Smarthpones</NavLink>
                         </li>
                         <li className="nav-item zoom">
                             <NavLink style={({isActive})=>
                                 isActive
                                 ? {fontWeight:'bold', color:'white'}
                                 :{}                        
-                            } className='text-nav fs-4' to={"/category/men's clothing"}>MEN'S CLOTHING</NavLink>
+                            } className='text-nav fs-4' to={"/category/headphone"}>Headphones</NavLink>
                         </li>
                         <li className="nav-item zoom">
                             <NavLink style={({isActive})=>

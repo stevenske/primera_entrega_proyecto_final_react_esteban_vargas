@@ -1,7 +1,7 @@
 
 const ItemCount = ({ product, setCount,count }) => {
 
-    const onRemove = () => count <= product.rating.count - 1 ? setCount(count + 1) : alert` You have reach the limit of the stock`
+    const onRemove = () => count <= product.stock - 1 ? setCount(count + 1) : alert` You have reach the limit of the stock`
     const onAdd = () => count > 0 ? setCount(count - 1) : alert`please choose the quantity you want to buy of this product, thank you very much!`
     return (
         <>

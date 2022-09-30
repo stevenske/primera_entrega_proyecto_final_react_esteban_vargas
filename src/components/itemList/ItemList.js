@@ -6,7 +6,6 @@ import './ItemList.css'
 const ItemList = ({ products }) => {
   return (
     <>
-    
       {
         products.map((product) =>
           <Link className='card_container col-md-2 d-flex' key={product.id} to={'/detail/' + product.id}  >

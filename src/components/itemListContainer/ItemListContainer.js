@@ -1,27 +1,33 @@
-
 import './ItemListContainer.css'
 import { useEffect, useState } from 'react'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, getFirestore,query,where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
   const [list, setList] = useState([])
   const {categoryName} = useParams()
 
 
-  const getProducts = async () =>{
-    let url
+  const getProducts = () =>{
+    const db = getFirestore()
+    const querySnapshot = collection(db,'products')
     if(categoryName){
-      url = `https://fakestoreapi.com/products/category/${categoryName}`
-    }else{
-      url = 'https://fakestoreapi.com/products'
-    }
-      fetch(url,{
-          method: 'GET'
+      const queryFilter = query(querySnapshot, where('category','==', categoryName))
+      getDocs(queryFilter).then((res)=>{
+        const data = res.docs.map((doc)=>{
+          return {id: doc.id, ...doc.data()}
+        })
+        setList(data)
       })
-      .then((response)=>response.json())
-      .then((data)=> setList(data))
-      // .finally(console.log(list))
+    }else{
+      getDocs(querySnapshot).then((res)=>{
+        const data = res.docs.map((doc)=>{
+          return {id: doc.id, ...doc.data()}
+        })
+        setList(data)
+      })
+    }
   }
 
   useEffect(()=>{
