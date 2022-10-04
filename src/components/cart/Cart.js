@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import moment from 'moment'
 import '../itemDetail/ItemDetail.css'
 import './Cart.css'
 import {Link} from 'react-router-dom'
+import {collection,addDoc,getFirestore} from 'firebase/firestore'
 
 const Cart = () => {
     const { cart, addToCart,removeProduct } = useContext(CartContext)
