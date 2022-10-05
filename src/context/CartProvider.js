@@ -7,14 +7,11 @@ const CartProvider = ({ children }) => {
         console.log(product);
 
         if (isInCart(product.id)) {
-            const elementoDuplicado = cart.find(
+            const addedProd = cart.find(
                 (elemento) => elemento.id === product.id
-            );
-            elementoDuplicado.quantity = elementoDuplicado.quantity + quantity;
-            console.log(elementoDuplicado);
-
-            alert("Ya esta en el carrito");
-            console.log(cart);
+            )
+            addedProd.quantity = addedProd.quantity + quantity;
+            console.log(addedProd);
         } else {
             setCart([...cart, { ...product, quantity }]);
         }

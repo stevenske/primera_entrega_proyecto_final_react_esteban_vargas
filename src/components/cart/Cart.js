@@ -22,9 +22,11 @@ const Cart = () => {
             date: moment().format(),
         }
         const query = collection(db, 'orders')
+        addDoc(query,order).then(()=>alert('Congrats your purchase was completed')).catch(alert('your purchase could not be completed please try again later'))
         
     }
     return (
+        <>
         <div className='row itemContainer gap-3 border border-dark rounded'>
             <h1 className='text-center border-bottom border-dark py-3 text-light bg-dark'>Cart</h1>
             {cart.length === 0 ?(
@@ -53,6 +55,9 @@ const Cart = () => {
             </>
             )}
         </div>
+        <div className='d-flex justify-content-center'><button onClick={createOrder} className='btn fs-3 p-5'>COMPLETE BUY</button></div>
+        </>
+        
         )
 }
 

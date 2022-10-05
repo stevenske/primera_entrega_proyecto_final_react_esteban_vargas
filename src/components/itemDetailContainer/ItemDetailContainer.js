@@ -6,11 +6,6 @@ import {getFirestore,doc,getDoc} from 'firebase/firestore'
 const ItemDetailContainer = () => {
     const {id} = useParams()
     const [product,setProduct]= useState({})
-    const db = getFirestore()
-    const queryDoc = doc(db,'products',id)
-    getDoc(queryDoc).then(res=>{
-        
-    })
     const getProduct = async () => {
         const db = getFirestore()
         const queryDoc = doc(db,'products',id)
