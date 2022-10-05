@@ -5,7 +5,7 @@ import {getFirestore,doc,getDoc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
-    const [product,setProduct]= useState()
+    const [product,setProduct]= useState({})
     const db = getFirestore()
     const queryDoc = doc(db,'products',id)
     getDoc(queryDoc).then(res=>{
@@ -15,12 +15,13 @@ const ItemDetailContainer = () => {
         const db = getFirestore()
         const queryDoc = doc(db,'products',id)
         getDoc(queryDoc).then(res=>{
-            setProduct(res.data())
+            const product = {...res.data(), id: res.id}
+            setProduct(product)
         })
     }
     useEffect(() => {
         getProduct()
-    }, [])
+    }, [id])
     return (
         <div id='ItemDetail-container' className='row itemContainer gap-3'>     
             {product && <ItemDetail product={product} />}
