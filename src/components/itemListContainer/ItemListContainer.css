@@ -3,3 +3,10 @@
     justify-content: center;
     margin: 1rem 1rem;
 }
+.bannerContainer img{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    min-height: 50vh;
+}

@@ -2,6 +2,7 @@ import './ItemListContainer.css'
 import { useEffect, useState } from 'react'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import banner from '../assets/images/banner.jpg'
 import { collection, getDocs, getFirestore,query,where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
@@ -34,7 +35,10 @@ const ItemListContainer = () => {
     getProducts()
   },[categoryName])
   return (<>
-    <div id='ItemList-container' className='row itemContainer gap-3'>
+    <div className='bannerContainer'>
+    <img src={banner}/>
+    </div>
+    <div id='ItemList-container' className='py-5 row itemContainer gap-3'>
       <ItemList products={list}/>
     </div>
     </>

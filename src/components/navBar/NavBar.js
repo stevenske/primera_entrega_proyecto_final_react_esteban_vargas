@@ -29,20 +29,7 @@ const NavBar = () =>{
                                 :{}                        
                             } className='text-nav fs-4' to={"/category/headphone"}>Headphones</NavLink>
                         </li>
-                        <li className="nav-item zoom">
-                            <NavLink style={({isActive})=>
-                                isActive
-                                ? {fontWeight:'bold', color:'white'}
-                                :{}
-                            }className="text-nav fs-4" to={'/contact'}>CONTACT</NavLink>
-                        </li>
-                        <li className="nav-item zoom">
-                            <NavLink style={({isActive})=>
-                                isActive
-                                ? {fontWeight:'bold', color:'white'}
-                                :{}
-                            } className="text-nav fs-4" to={'/about-us'}>ABOUT US</NavLink>
-                        </li>
+                        
                     </ul>
                     <ul className='zoom'><Link className='link' to="/cart"><CartWidget img={shoppingLogo}/></Link></ul>
                 </div>
